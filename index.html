@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fluent Style Showcase</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="background-overlay"></div>
+  <div class="container">
+<header class="acrylic">
+  <div class="logo-title">
+    <img src="assets/logo.png" alt="Logo" class="logo" />
+    <h1>Blackreliart Maps</h1>
+    <h2>1.21.10</h2>
+  </div>
+  <a href="https://blackreliart.github.io/Floating-Islands/floating%20island.7z" class="fluent-button" download>
+    ⬇ download
+  </a>
+</header>
+
+    <main>
+        
+  <section class="slideshow acrylic">
+    <img class="slide" src="assets/slide1.png" alt="Slide1" />
+    <img class="slide" src="assets/slide2.png" alt="Slide2" />
+    <img class="slide" src="assets/slide3.png" alt="Slide3" />
+    <img class="slide" src="assets/slide4.png" alt="slide4" />
+    <img class="slide" src="assets/slide5.png" alt="slide5" />
+    <img class="slide" src="assets/slide6.png" alt="slide6" />
+    <img class="slide" src="assets/slide7.png" alt="slide7" />
+    <img class="slide" src="assets/slide8.png" alt="slide8" />
+    <img class="slide" src="assets/slide9.png" alt="slide9" />
+    <img class="slide" src="assets/slide10.png" alt="slide10" />
+    <img class="slide" src="assets/slide11.png" alt="slide11" />
+    <img class="slide" src="assets/slide12.png" alt="slide12" />
+    <img class="slide" src="assets/slide13.png" alt="slide13" />
+
+
+
+  </section>
+
+  <section class="gallery">
+    <img class="thumb" src="assets/slide1.png" alt="Thumb 1" data-index="0" />
+    <img class="thumb" src="assets/slide2.png" alt="Thumb 2" data-index="1" />
+    <img class="thumb" src="assets/slide3.png" alt="Thumb 3" data-index="2" />
+    <img class="thumb" src="assets/slide4.png" alt="Thumb 3" data-index="3" />
+    <img class="thumb" src="assets/slide5.png" alt="Thumb 4" data-index="4" />
+    <img class="thumb" src="assets/slide6.png" alt="Thumb 5" data-index="5" />
+    <img class="thumb" src="assets/slide7.png" alt="Thumb 6" data-index="6" />
+    <img class="thumb" src="assets/slide8.png" alt="Thumb 7" data-index="7" />
+    <img class="thumb" src="assets/slide9.png" alt="Thumb 8" data-index="8" />
+    <img class="thumb" src="assets/slide10.png" alt="Thumb 9" data-index="9" />
+    <img class="thumb" src="assets/slide11.png" alt="Thumb 10" data-index="10" />
+    <img class="thumb" src="assets/slide12.png" alt="Thumb 11" data-index="11" />
+    <img class="thumb" src="assets/slide13.png" alt="Thumb 12" data-index="12" />
+    
+
+
+  </section>
+  <!--
+    <section class="gallerybottom">
+    <img class="thumb" src="assets/slide1.png" alt="Thumb 1" data-index="0" />
+    <img class="thumb" src="assets/slide2.png" alt="Thumb 2" data-index="1" />
+    <img class="thumb" src="assets/slide3.png" alt="Thumb 3" data-index="2" />
+-->
+
+  </section>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const thumbs = document.querySelectorAll('.thumb');
+const backgroundOverlay = document.querySelector('.background-overlay');
+let currentIndex = 0;
+let slideInterval;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+  thumbs.forEach((thumb, i) => {
+    thumb.classList.toggle('selected', i === index);
+  });
+  currentIndex = index;
+
+  // Hintergrundbild setzen
+  const imageUrl = slides[index].src;
+  backgroundOverlay.style.backgroundImage = `url('${imageUrl}')`;
+}
+
+function nextSlide() {
+  let nextIndex = (currentIndex + 1) % slides.length;
+  showSlide(nextIndex);
+}
+
+thumbs.forEach((thumb) => {
+  thumb.addEventListener('click', () => {
+    clearInterval(slideInterval);
+    showSlide(parseInt(thumb.dataset.index));
+    slideInterval = setInterval(nextSlide, 4000);
+  });
+});
+
+// Start Slideshow mit Hintergrund setzen
+showSlide(0);
+slideInterval = setInterval(nextSlide, 4000);
+
+
+</script>
+
+</body>
+</html>

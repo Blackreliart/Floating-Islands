@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Generische Schriftarten Demo</title>
+  <style>
+    body {
+      margin: 2rem;
+      background: #f9f9f9;
+      color: #222;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      font-family: sans-serif;
+    }
+    section {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .serif {
+      font-family: serif;
+    }
+    .sans-serif {
+      font-family: sans-serif;
+    }
+    .monospace {
+      font-family: monospace;
+    }
+    .cursive {
+      font-family: cursive;
+    }
+    .fantasy {
+      font-family: fantasy;
+    }
+  </style>
+</head>
+<body>
+  <section class="serif">
+    <h2>Serif</h2>
+    <p>Das ist ein Beispieltext in der generischen Schriftart <code>serif</code>. Klassisch und elegant.</p>
+  </section>
+
+  <section class="sans-serif">
+    <h2>Sans-Serif</h2>
+    <p>Das ist ein Beispieltext in der generischen Schriftart <code>sans-serif</code>. Modern und klar.</p>
+  </section>
+
+  <section class="monospace">
+    <h2>Monospace</h2>
+    <p>Das ist ein Beispieltext in der generischen Schriftart <code>monospace</code>. Alle Zeichen haben die gleiche Breite.</p>
+  </section>
+
+  <section class="cursive">
+    <h2>Cursive</h2>
+    <p>Das ist ein Beispieltext in der generischen Schriftart <code>cursive</code>. Handschriftlich und geschwungen.</p>
+  </section>
+
+  <section class="fantasy">
+    <h2>Fantasy</h2>
+    <p>Das ist ein Beispieltext in der generischen Schriftart <code>fantasy</code>. Dekorativ und verspielt.</p>
+  </section>
+</body>
+</html>
